@@ -97,7 +97,17 @@ body {
 
 .mole {
   background-image: url(/images/imgbin-whac-a-mole-crappy-flappy-moles-android-video-game-android-u2dzpYTG4ZiqWifamFuQajWWD_t.jpeg);
-  background-size: contain;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.start-game {
+  margin-block-start: 40px;
+}
+
+.start-game:hover {
+  transform: scale(1.1);
 }
 
 .navigation {

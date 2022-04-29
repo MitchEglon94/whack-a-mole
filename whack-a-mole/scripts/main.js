@@ -1,4 +1,5 @@
 const newGame = document.getElementById("new-game");
+const startGame = document.getElementById("start-game");
 const leaderboard = document.getElementById("leaderboard");
 const countdown = document.getElementById("countdown");
 const scoreCount = document.getElementById("score-count");
@@ -42,13 +43,16 @@ gameGrid.addEventListener("click", (e) => {
 
 //GENERATE RANDOM NUMBER AND ASSIGN
 function moleSet() {
-  setInterval(() => {
+  const moleInterval = setInterval(() => {
+    console.log("int2");
     if (!gameOver) {
       console.log("running");
       const rand = getRandomIntInclusive(0, moleHill.length - 1);
       randomMole(rand);
     } else {
       clearMoles();
+      clearInterval(moleInterval);
+      return;
     }
   }, 900);
 }
@@ -59,21 +63,27 @@ function countdownTimer() {
   let timeCount = countdown.textContent;
   console.log(timeCount);
   const counterTimer = setInterval(() => {
-    if (timeCount) {
+    console.log("int1");
+    if (timeCount && !gameOver) {
       timeCount -= 1;
       countdown.textContent = timeCount;
     } else {
       gameOver = true;
+      clearInterval(counterTimer);
+      return;
     }
   }, 1000);
 
   return counterTimer;
 }
 
+//RESTART FUNCTION, RESET STATS COUNTERS AND START PROCESSES AGAIN
+
 function restartGame() {
   countdown.textContent = "30";
   scoreCount.textContent = "0";
-  gameOver = false;
+  moleSet();
+  countdownTimer();
   console.log(gameOver);
 }
 
@@ -84,8 +94,8 @@ function restartGame() {
  * 1 TIMEOUT TO REMOVE COUNTDOWN DIV
  ********************************/
 
-newGame.addEventListener("click", (e) => {
-  restartGame();
+startGame.addEventListener("click", (e) => {
+  console.log("clicked");
   //1 SET INTERVAL TO COUNTDOWN
   let counter = 3;
   const interval = setInterval(() => {
@@ -113,4 +123,10 @@ newGame.addEventListener("click", (e) => {
   setTimeout(() => {
     countdownTimer();
   }, 3000);
+});
+
+// BUTTON TO INITIATE NEW GAME
+newGame.addEventListener("click", (e) => {
+  gameOver = false;
+  restartGame();
 });
