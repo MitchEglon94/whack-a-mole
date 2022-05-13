@@ -1,24 +1,9 @@
-/**
- * Copyright 2022 mitchelleglon
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *     http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 body {
   font-family: "Press Start 2P", cursive;
   inline-size: 100vw;
   block-size: 100vh;
   text-align: center;
-  background-image: url(/images/sky.webp);
+  background-image: url(/images/sky2.jpeg);
   color: white;
   font-size: 1.5rem;
   text-shadow: 0px 0px 5px black;
@@ -96,18 +81,28 @@ body {
 }
 
 .mole {
-  background-image: url(/images/imgbin-whac-a-mole-crappy-flappy-moles-android-video-game-android-u2dzpYTG4ZiqWifamFuQajWWD_t.jpeg);
-  background-size: 100%;
+  background-image: url(/images/mole2.png);
+  background-size: 500%;
   background-position: center;
   background-repeat: no-repeat;
+  box-shadow: none;
 }
 
 .start-game {
   margin-block-start: 40px;
 }
 
-.start-game:hover {
+.hide-start-game {
+  visibility: hidden;
+}
+
+.start-game:hover,
+.select:hover {
   transform: scale(1.1);
+}
+
+.select:active {
+  color: grey;
 }
 
 .navigation {
@@ -121,6 +116,10 @@ body {
 .new-game:hover,
 .leaderboard:hover {
   transform: scale(1.1);
+}
+
+.leaderboard {
+  margin-block-end: 10px;
 }
 
 @media (min-width: 768px) {
@@ -161,3 +160,23 @@ body {
     block-size: 45vw;
   }
 }
+
+/* CHI STUFF */
+.leaderboard-details {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.hide-leaderboard {
+  display: none;
+}
+
+.leaderboard-form {
+  margin-block-end: 10px;
+}
+
+/* .leaderboard-names,
+.leaderboard-scores {
+  outline: 2px solid red;
+} */

@@ -37,6 +37,13 @@
       </div>
       <div class="get-ready" id="play">
         How many moles can you hit?
+        <!-- <div class="level-select-container">
+          <ul class="level-select">
+            <li id="easy" class="select">Easy</li>
+            <li id="medium" class="select">Medium</li>
+            <li id="hard" class="select">Hard</li>
+          </ul>
+        </div> -->
         <div id="start-game" class="start-game">Start Game</div>
       </div>
       <div id="game-grid" class="game-grid hide-grid">
@@ -50,9 +57,55 @@
         <div class="grid-square"></div>
         <div class="grid-square"></div>
       </div>
+      <div
+        id="leaderboard-details"
+        class="leaderboard-details hide-leaderboard"
+      >
+        <div class="leaderboard-names">
+          <p>Name</p>
+
+          <ol id="name-list">
+            <li id="leaderboard-name1" class="leaderboard-name"></li>
+            <li id="leaderboard-name2" class="leaderboard-name"></li>
+            <li id="leaderboard-name3" class="leaderboard-name"></li>
+            <li id="leaderboard-name4" class="leaderboard-name"></li>
+            <li id="leaderboard-name5" class="leaderboard-name hide-names"></li>
+          </ol>
+        </div>
+
+        <!-- LEADERBOARD CODE -->
+        <div class="leaderboard-scores">
+          <p>Score</p>
+          <ul>
+            <li id="score1" class=""></li>
+            <li id="score2" class=""></li>
+            <li id="score3" class=""></li>
+            <li id="score4" class=""></li>
+            <li id="score5" class=""></li>
+          </ul>
+        </div>
+      </div>
       <div class="navigation">
-        <div class="new-game" id="new-game">New game</div>
+        <div class="new-game hide-play" id="new-game">New game</div>
         <div class="leaderboard" id="leaderboard">Leaderboard</div>
+      </div>
+      <div class="leaderboard-container">
+        <form
+          id="leaderboard-form"
+          class="leaderboard-form hide-play"
+          name="name-submit"
+        >
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="input-name"
+            minlength="2"
+            maxlength="10"
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </div>
   </body>
