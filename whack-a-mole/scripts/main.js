@@ -1,3 +1,7 @@
+////////////////////////////////////////
+///////////      MITCH      ////////////
+////////////////////////////////////////
+
 const newGame = document.getElementById("new-game");
 const startGame = document.getElementById("start-game");
 const leaderboard = document.getElementById("leaderboard");
